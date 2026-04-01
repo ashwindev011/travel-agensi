@@ -53,7 +53,7 @@ export default function Hotels() {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-6xl font-bold text-white mb-6"
             >
-              Premium Stays
+              Luxury Stays
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

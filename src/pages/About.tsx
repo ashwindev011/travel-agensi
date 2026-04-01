@@ -180,7 +180,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
               <div className="max-w-2xl">
                 <span className="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4 block">Our Journey</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900">From a Single Desk to Global Journeys</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900">From a Single Desk to Global Adventures</h2>
               </div>
               <div className="hidden md:block">
                 <div className="w-20 h-20 bg-white rounded-full border border-slate-200 flex items-center justify-center text-slate-300">

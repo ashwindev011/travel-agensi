@@ -1,10 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { motion } from 'motion/react';
-import { Clock, Users, Star, MapPin, CheckCircle2, Calendar, ArrowLeft, ShieldCheck, Wifi, Coffee, Waves, Utensils, Wind, Sparkles, Car, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { Clock, Users, Star, MapPin, CheckCircle2, Calendar, ArrowLeft, ShieldCheck, Wifi, Coffee, Waves, Utensils, Wind, Sparkles, Car } from 'lucide-react';
 import { packages } from '../data/tours';
-import ImagePopup from '../components/ImagePopup';
 
 const getFacilityIcon = (facility: string) => {
   const f = facility.toLowerCase();
@@ -21,38 +20,6 @@ const getFacilityIcon = (facility: string) => {
 export default function TourDetails() {
   const { id } = useParams<{ id: string }>();
   const tour = packages.find(p => p.id === id);
-  const galleryRef = useRef<HTMLDivElement>(null);
-  
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const scrollGallery = (direction: 'left' | 'right') => {
-    if (galleryRef.current) {
-      const scrollAmount = direction === 'left' ? -400 : 400;
-      galleryRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
-
-  const openPopup = (index: number) => {
-    setCurrentImageIndex(index);
-    setIsPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
-
-  const nextImage = () => {
-    if (tour?.gallery) {
-      setCurrentImageIndex((prev) => (prev + 1) % tour.gallery!.length);
-    }
-  };
-
-  const prevImage = () => {
-    if (tour?.gallery) {
-      setCurrentImageIndex((prev) => (prev - 1 + tour.gallery!.length) % tour.gallery!.length);
-    }
-  };
 
   if (!tour) {
     return (
@@ -75,28 +42,14 @@ export default function TourDetails() {
 
   return (
     <Layout>
-      {tour.gallery && (
-        <ImagePopup 
-          images={tour.gallery.map(url => ({ url, title: tour.title }))}
-          currentIndex={currentImageIndex}
-          isOpen={isPopupOpen}
-          onClose={closePopup}
-          onNext={nextImage}
-          onPrev={prevImage}
-        />
-      )}
       <div className="min-h-screen pt-24 pb-20 bg-slate-50">
         {/* Hero Section */}
         <div className="relative h-[50vh] min-h-[400px] md:h-[60vh] overflow-hidden">
           <img 
-            src={tour.image.includes('&w=') ? tour.image.replace(/&w=\d+/, '&w=1600') : tour.image}
-            srcSet={tour.image.includes('&w=') ? `${tour.image.replace(/&w=\d+/, '&w=800')} 800w, ${tour.image.replace(/&w=\d+/, '&w=1600')} 1600w, ${tour.image.replace(/&w=\d+/, '&w=2400')} 2400w` : undefined}
-            sizes="100vw"
+            src={tour.image} 
             alt={tour.title}
-            className="absolute inset-0 w-full h-full object-cover bg-slate-200"
+            className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            decoding="async"
-            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
           
@@ -150,32 +103,11 @@ export default function TourDetails() {
                 </p>
               </section>
 
-              {/* Gallery */}
+              {/* Gallery (Right to left scroll) */}
               {tour.gallery && tour.gallery.length > 0 && (
                 <section>
-                  <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-3xl font-bold text-slate-900">Gallery</h2>
-                    <div className="flex items-center gap-2">
-                      <button 
-                        onClick={() => scrollGallery('left')}
-                        className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-all shadow-sm"
-                        aria-label="Scroll left"
-                      >
-                        <ChevronLeft className="w-5 h-5" />
-                      </button>
-                      <button 
-                        onClick={() => scrollGallery('right')}
-                        className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-all shadow-sm"
-                        aria-label="Scroll right"
-                      >
-                        <ChevronRight className="w-5 h-5" />
-                      </button>
-                    </div>
-                  </div>
-                  <div 
-                    ref={galleryRef}
-                    className="flex overflow-x-auto gap-4 pb-6 snap-x snap-mandatory hide-scrollbar scroll-smooth"
-                  >
+                  <h2 className="text-3xl font-bold text-slate-900 mb-6">Gallery</h2>
+                  <div className="flex overflow-x-auto gap-4 pb-6 snap-x snap-mandatory hide-scrollbar">
                     {tour.gallery.map((img, index) => (
                       <motion.div 
                         key={index}
@@ -183,22 +115,14 @@ export default function TourDetails() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="min-w-[85%] sm:min-w-[60%] md:min-w-[45%] h-64 rounded-[2rem] overflow-hidden snap-center shrink-0 shadow-lg shadow-slate-200/50 relative group cursor-pointer"
-                        onClick={() => openPopup(index)}
+                        className="min-w-[85%] sm:min-w-[60%] md:min-w-[45%] h-64 rounded-[2rem] overflow-hidden snap-center shrink-0 shadow-lg shadow-slate-200/50"
                       >
                         <img 
                           src={img} 
-                          srcSet={img.includes('&w=') ? `${img.replace(/&w=\d+/, '&w=400')} 400w, ${img.replace(/&w=\d+/, '&w=800')} 800w, ${img.replace(/&w=\d+/, '&w=1200')} 1200w` : undefined}
-                          sizes="(max-width: 640px) 85vw, (max-width: 768px) 60vw, 45vw"
                           alt={`${tour.title} gallery ${index + 1}`} 
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 bg-slate-100"
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                           referrerPolicy="no-referrer"
-                          loading="lazy"
-                          decoding="async"
                         />
-                        <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-white">
-                          <Maximize2 className="w-8 h-8 scale-50 group-hover:scale-100 transition-transform duration-500" />
-                        </div>
                       </motion.div>
                     ))}
                   </div>

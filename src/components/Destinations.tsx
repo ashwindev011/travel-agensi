@@ -7,7 +7,7 @@ const destinations = [
     location: 'Indian Ocean',
     image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800',
     rating: 4.9,
-    tag: 'Premium'
+    tag: 'Luxury'
   },
   {
     name: 'Bali',
@@ -21,7 +21,7 @@ const destinations = [
     location: 'Southeast Asia',
     image: 'https://images.unsplash.com/photo-1528181304800-2f140819ad9c?auto=format&fit=crop&q=80&w=800',
     rating: 4.7,
-    tag: 'Nature'
+    tag: 'Adventure'
   },
   {
     name: 'Malaysia',

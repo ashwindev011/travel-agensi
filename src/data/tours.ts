@@ -30,22 +30,22 @@ export const packages: TourPackage[] = [
       'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?auto=format&fit=crop&q=80&w=800'
     ],
-    tag: 'Romantic',
+    tag: 'Honeymoon',
     price: 95000,
     description: 'Experience ultimate luxury in the heart of the Indian Ocean. Our Maldives Paradise Escape offers crystal clear waters, white sandy beaches, and overwater villas that will take your breath away.',
     itinerary: [
       { day: 1, title: 'Arrival & Transfer', description: 'Arrive at Male International Airport and transfer to your luxury resort via speedboat.' },
-      { day: 2, title: 'Snorkeling Experience', description: 'Explore the vibrant coral reefs and swim with colorful marine life.' },
+      { day: 2, title: 'Snorkeling Adventure', description: 'Explore the vibrant coral reefs and swim with colorful marine life.' },
       { day: 3, title: 'Spa & Relaxation', description: 'Enjoy a full day of pampering at the resort\'s world-class spa.' },
       { day: 4, title: 'Sunset Cruise', description: 'Witness a magical sunset while cruising on a traditional Dhoni.' },
       { day: 5, title: 'Departure', description: 'Final breakfast at the resort and transfer back to the airport.' }
     ],
-    included: ['Premium Accommodation', 'All Meals', 'Speedboat Transfers', 'Snorkeling Gear', 'Sunset Cruise'],
+    included: ['Luxury Accommodation', 'All Meals', 'Speedboat Transfers', 'Snorkeling Gear', 'Sunset Cruise'],
     facilities: ['Free Wi-Fi', 'Private Pool', 'Spa & Wellness', 'Ocean View', 'Room Service']
   },
   {
     id: 'bali-cultural',
-    title: 'Bali Heritage Wonders',
+    title: 'Bali Cultural Wonders',
     location: 'Bali, Indonesia',
     duration: '7 Days / 6 Nights',
     groupSize: 'Up to 10 People',
@@ -57,7 +57,7 @@ export const packages: TourPackage[] = [
       'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1539314171919-90c50fda9d0f?auto=format&fit=crop&q=80&w=800'
     ],
-    tag: 'Heritage',
+    tag: 'Cultural',
     price: 65000,
     description: 'Discover the spiritual heart of Indonesia. From ancient temples to lush rice terraces, this tour immerses you in the rich traditions and natural beauty of Bali.',
     itinerary: [
@@ -65,7 +65,7 @@ export const packages: TourPackage[] = [
       { day: 2, title: 'Temple Tour', description: 'Visit Tirta Empul and the iconic Tegalalang Rice Terrace.' },
       { day: 3, title: 'Monkey Forest', description: 'A walk through the sacred Monkey Forest and local craft markets.' },
       { day: 4, title: 'Mount Batur Sunrise', description: 'Early morning trek to the summit of Mount Batur for sunrise.' },
-      { day: 5, title: 'Coast Club Day', description: 'Transfer to Seminyak for a day of sun and surf.' },
+      { day: 5, title: 'Beach Club Day', description: 'Transfer to Seminyak for a day of sun and surf.' },
       { day: 6, title: 'Uluwatu Temple', description: 'Visit the cliffside Uluwatu Temple and watch a Kecak fire dance.' },
       { day: 7, title: 'Farewell', description: 'Last minute shopping and transfer to the airport.' }
     ],
@@ -74,7 +74,7 @@ export const packages: TourPackage[] = [
   },
   {
     id: 'swiss-alps',
-    title: 'Swiss Alps Journey',
+    title: 'Swiss Alps Adventure',
     location: 'Switzerland',
     duration: '6 Days / 5 Nights',
     groupSize: 'Up to 8 People',
@@ -86,7 +86,7 @@ export const packages: TourPackage[] = [
       'https://images.unsplash.com/photo-1491557345352-5929e343eb89?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1527668752968-14ce70a27dd3?auto=format&fit=crop&q=80&w=800'
     ],
-    tag: 'Nature',
+    tag: 'Adventure',
     price: 185000,
     description: 'A high-altitude journey through the most stunning peaks in Europe. Perfect for those who love fresh mountain air and breathtaking vistas.',
     itinerary: [
@@ -114,7 +114,7 @@ export const packages: TourPackage[] = [
       'https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&q=80&w=800'
     ],
-    tag: 'Premium',
+    tag: 'Luxury',
     price: 55000,
     description: 'Experience the magic of the Arabian desert combined with the futuristic luxury of Dubai. A short but intense getaway.',
     itinerary: [
@@ -123,7 +123,7 @@ export const packages: TourPackage[] = [
       { day: 3, title: 'Old Dubai', description: 'Explore the Gold and Spice Souks and cross the Creek in an Abra.' },
       { day: 4, title: 'Departure', description: 'Morning at leisure and transfer to DXB airport.' }
     ],
-    included: ['Premium Hotel', 'Burj Khalifa Tickets', 'Desert Safari Tour', 'Airport Transfers', 'Daily Breakfast'],
+    included: ['Luxury Hotel', 'Burj Khalifa Tickets', 'Desert Safari Tour', 'Airport Transfers', 'Daily Breakfast'],
     facilities: ['Free Wi-Fi', 'Swimming Pool', 'Fitness Center', 'Air Conditioning', 'Restaurant']
   },
   {
@@ -140,21 +140,21 @@ export const packages: TourPackage[] = [
       'https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&q=80&w=800'
     ],
-    tag: 'Tropical',
+    tag: 'Beach',
     price: 45000,
     description: 'The ultimate tropical adventure. Explore the stunning islands of the Andaman Sea, from hidden lagoons to world-famous beaches.',
     itinerary: [
       { day: 1, title: 'Phuket Arrival', description: 'Check into your beachfront resort in Phuket.' },
       { day: 2, title: 'Phi Phi Islands', description: 'Full day boat tour to Maya Bay and Bamboo Island.' },
       { day: 3, title: 'James Bond Island', description: 'Explore the famous limestone cliffs of Phang Nga Bay.' },
-      { day: 4, title: 'Krabi Transfer', description: 'Scenic ferry ride to the beautiful Railay Coast.' },
+      { day: 4, title: 'Krabi Transfer', description: 'Scenic ferry ride to the beautiful Railay Beach.' },
       { day: 5, title: 'Four Islands Tour', description: 'Visit Koh Poda, Chicken Island, and Tup Island.' },
       { day: 6, title: 'Free Day', description: 'Relax on the beach or explore local markets.' },
       { day: 7, title: 'Return to Phuket', description: 'Transfer back to Phuket for a farewell dinner.' },
       { day: 8, title: 'Departure', description: 'Transfer to Phuket International Airport.' }
     ],
     included: ['Resort Accommodation', 'Boat Tours', 'Daily Breakfast', 'Local Guides', 'All Transfers'],
-    facilities: ['Free Wi-Fi', 'Oceanfront', 'Swimming Pool', 'Bar', 'Air Conditioning']
+    facilities: ['Free Wi-Fi', 'Beachfront', 'Swimming Pool', 'Bar', 'Air Conditioning']
   },
   {
     id: 'kerala-backwaters',

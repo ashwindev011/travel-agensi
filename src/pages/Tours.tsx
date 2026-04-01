@@ -13,13 +13,9 @@ export default function Tours() {
         <div className="relative h-[400px] bg-slate-900 flex items-center justify-center overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2000" 
-            srcSet="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1600 1600w, https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2400 2400w"
-            sizes="100vw"
-            className="absolute inset-0 w-full h-full object-cover opacity-40 bg-slate-900"
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
             alt="Tours"
             referrerPolicy="no-referrer"
-            decoding="async"
-            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900" />
           <div className="relative z-10 text-center px-6">
@@ -45,7 +41,7 @@ export default function Tours() {
         <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
           <div className="bg-white p-6 rounded-3xl shadow-xl border border-slate-100 flex flex-wrap items-center justify-between gap-6">
             <div className="flex items-center gap-4 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
-              {['All Tours'].map((cat) => (
+              {['All Tours', 'Honeymoon', 'Adventure', 'Cultural', 'Beach', 'Luxury'].map((cat) => (
                 <button 
                   key={cat}
                   className={`px-6 py-2 rounded-full text-sm font-bold transition-all whitespace-nowrap ${
@@ -81,13 +77,9 @@ export default function Tours() {
                 <div className="relative h-72 overflow-hidden">
                   <img 
                     src={pkg.image} 
-                    srcSet={pkg.image.includes('&w=') ? `${pkg.image.replace(/&w=\d+/, '&w=400')} 400w, ${pkg.image.replace(/&w=\d+/, '&w=800')} 800w, ${pkg.image.replace(/&w=\d+/, '&w=1200')} 1200w` : undefined}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     alt={pkg.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     referrerPolicy="no-referrer"
-                    loading="lazy"
-                    decoding="async"
                   />
                   <div className="absolute top-6 left-6">
                     <span className="px-4 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white text-xs font-bold uppercase tracking-wider">
