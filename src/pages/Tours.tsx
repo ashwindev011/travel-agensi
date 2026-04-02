@@ -13,9 +13,13 @@ export default function Tours() {
         <div className="relative h-[400px] bg-slate-900 flex items-center justify-center overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2000" 
-            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            srcSet="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1600 1600w, https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2400 2400w"
+            sizes="100vw"
+            className="absolute inset-0 w-full h-full object-cover opacity-40 bg-slate-900"
             alt="Tours"
             referrerPolicy="no-referrer"
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900" />
           <div className="relative z-10 text-center px-6">
@@ -41,7 +45,7 @@ export default function Tours() {
         <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
           <div className="bg-white p-6 rounded-3xl shadow-xl border border-slate-100 flex flex-wrap items-center justify-between gap-6">
             <div className="flex items-center gap-4 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
-              {['All Tours', 'Honeymoon', 'Adventure', 'Cultural', 'Beach', 'Luxury'].map((cat) => (
+              {['All Tours'].map((cat) => (
                 <button 
                   key={cat}
                   className={`px-6 py-2 rounded-full text-sm font-bold transition-all whitespace-nowrap ${
@@ -77,9 +81,13 @@ export default function Tours() {
                 <div className="relative h-72 overflow-hidden">
                   <img 
                     src={pkg.image} 
+                    srcSet={pkg.image.includes('&w=') ? `${pkg.image.replace(/&w=\d+/, '&w=400')} 400w, ${pkg.image.replace(/&w=\d+/, '&w=800')} 800w, ${pkg.image.replace(/&w=\d+/, '&w=1200')} 1200w` : undefined}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     alt={pkg.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-6 left-6">
                     <span className="px-4 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white text-xs font-bold uppercase tracking-wider">
@@ -116,12 +124,20 @@ export default function Tours() {
                       <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Explore</span>
                       <span className="text-xl font-bold text-slate-900">View Details</span>
                     </div>
-                    <Link 
-                      to={`/tour/${pkg.id}`}
-                      className="bg-slate-900 text-white p-4 rounded-2xl hover:bg-brand-600 transition-all group/btn"
-                    >
-                      <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
-                    </Link>
+                    <div className="flex gap-2">
+                      <Link 
+                        to={`/booking/${pkg.id}`}
+                        className="flex-1 bg-brand-600 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-2xl font-bold text-xs sm:text-sm hover:bg-brand-700 transition-all flex items-center justify-center"
+                      >
+                        Book Now
+                      </Link>
+                      <Link 
+                        to={`/tour/${pkg.id}`}
+                        className="bg-slate-900 text-white p-3 sm:p-4 rounded-2xl hover:bg-brand-600 transition-all group/btn"
+                      >
+                        <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>

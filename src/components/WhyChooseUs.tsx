@@ -108,7 +108,7 @@ export default function WhyChooseUs() {
               <div className="h-2/3 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" 
-                  alt="Beach"
+                  alt="Coast"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
@@ -126,7 +126,7 @@ export default function WhyChooseUs() {
               <div className="h-1/3 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800" 
-                  alt="Adventure"
+                  alt="Journey"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { motion } from 'motion/react';
 import { CheckCircle2, Award, Users, Globe, Heart, Shield, Zap, Target, ArrowRight, Star } from 'lucide-react';
@@ -180,7 +181,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
               <div className="max-w-2xl">
                 <span className="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4 block">Our Journey</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900">From a Single Desk to Global Adventures</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900">From a Single Desk to Global Journeys</h2>
               </div>
               <div className="hidden md:block">
                 <div className="w-20 h-20 bg-white rounded-full border border-slate-200 flex items-center justify-center text-slate-300">
@@ -277,6 +278,51 @@ export default function About() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="py-32 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-brand-600 rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl shadow-brand-200">
+              <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+              <div className="relative z-10 max-w-3xl mx-auto">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className="text-4xl md:text-6xl font-bold text-white mb-8"
+                >
+                  Ready to Start Your <span className="italic">Next Adventure?</span>
+                </motion.h2>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-xl text-brand-100 mb-12"
+                >
+                  Join thousands of happy travelers and discover the world's most beautiful destinations at unbeatable prices.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex flex-col sm:flex-row items-center justify-center gap-6"
+                >
+                  <Link 
+                    to="/tour-packages"
+                    className="w-full sm:w-auto px-10 py-5 bg-white text-brand-600 rounded-2xl font-bold text-lg hover:bg-brand-50 transition-all shadow-xl"
+                  >
+                    Explore Packages
+                  </Link>
+                  <Link 
+                    to="/contact"
+                    className="w-full sm:w-auto px-10 py-5 bg-brand-700 text-white rounded-2xl font-bold text-lg hover:bg-brand-800 transition-all border border-brand-500"
+                  >
+                    Contact Support
+                  </Link>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

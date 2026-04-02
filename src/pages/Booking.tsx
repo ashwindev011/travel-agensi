@@ -66,17 +66,17 @@ export default function Booking() {
       />
 
       <div className="min-h-screen pt-24 pb-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-          <div className="grid lg:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-20">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 gap-8 md:gap-12">
             {/* Booking Form */}
             <div className="lg:col-span-2">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white p-8 md:p-16 rounded-[3rem] shadow-2xl shadow-slate-200 border border-slate-100"
+                className="bg-white p-6 sm:p-8 md:p-16 rounded-3xl md:rounded-[3rem] shadow-2xl shadow-slate-200 border border-slate-100"
               >
                 {/* Progress Bar */}
-                <div className="flex items-center justify-between mb-12 relative">
+                <div className="flex items-center justify-between mb-8 md:mb-12 relative">
                   <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -translate-y-1/2 z-0" />
                   <div 
                     className="absolute top-1/2 left-0 h-0.5 bg-brand-600 -translate-y-1/2 z-0 transition-all duration-500" 
@@ -104,18 +104,18 @@ export default function Booking() {
                         exit={{ opacity: 0, x: -20 }}
                         className="space-y-8"
                       >
-                        <div className="flex items-center gap-4 mb-8">
-                          <div className="w-12 h-12 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600">
-                            <User className="w-6 h-6" />
+                        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-50 rounded-xl md:rounded-2xl flex items-center justify-center text-brand-600 shrink-0">
+                            <User className="w-5 h-5 md:w-6 md:h-6" />
                           </div>
                           <div>
-                            <h2 className="text-2xl font-bold text-slate-900">Personal Information</h2>
-                            <p className="text-slate-500">Tell us who is traveling.</p>
+                            <h2 className="text-xl md:text-2xl font-bold text-slate-900">Personal Information</h2>
+                            <p className="text-sm md:text-base text-slate-500">Tell us who is traveling.</p>
                           </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                          <div className="space-y-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+                          <div className="space-y-2 md:space-y-3">
                             <label className="text-sm font-bold text-slate-700 ml-1">Full Name</label>
                             <input 
                               type="text" 
@@ -123,10 +123,10 @@ export default function Booking() {
                               value={formData.fullName}
                               onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                               placeholder="John Doe"
-                              className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
+                              className="w-full px-4 py-3 md:px-6 md:py-4 bg-slate-50 border-none rounded-xl md:rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
                             />
                           </div>
-                          <div className="space-y-3">
+                          <div className="space-y-2 md:space-y-3">
                             <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
                             <input 
                               type="email" 
@@ -134,10 +134,10 @@ export default function Booking() {
                               value={formData.email}
                               onChange={(e) => setFormData({...formData, email: e.target.value})}
                               placeholder="john@example.com"
-                              className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
+                              className="w-full px-4 py-3 md:px-6 md:py-4 bg-slate-50 border-none rounded-xl md:rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
                             />
                           </div>
-                          <div className="space-y-3">
+                          <div className="space-y-2 md:space-y-3">
                             <label className="text-sm font-bold text-slate-700 ml-1">Phone Number</label>
                             <input 
                               type="tel" 
@@ -145,7 +145,7 @@ export default function Booking() {
                               value={formData.phone}
                               onChange={(e) => setFormData({...formData, phone: e.target.value})}
                               placeholder="+91 123 456 7890"
-                              className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
+                              className="w-full px-4 py-3 md:px-6 md:py-4 bg-slate-50 border-none rounded-xl md:rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
                             />
                           </div>
                         </div>
@@ -160,34 +160,34 @@ export default function Booking() {
                         exit={{ opacity: 0, x: -20 }}
                         className="space-y-8"
                       >
-                        <div className="flex items-center gap-4 mb-8">
-                          <div className="w-12 h-12 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600">
-                            <Calendar className="w-6 h-6" />
+                        <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-50 rounded-xl md:rounded-2xl flex items-center justify-center text-brand-600 shrink-0">
+                            <Calendar className="w-5 h-5 md:w-6 md:h-6" />
                           </div>
                           <div>
-                            <h2 className="text-2xl font-bold text-slate-900">Trip Details</h2>
-                            <p className="text-slate-500">When and how many people?</p>
+                            <h2 className="text-xl md:text-2xl font-bold text-slate-900">Trip Details</h2>
+                            <p className="text-sm md:text-base text-slate-500">When and how many people?</p>
                           </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                          <div className="space-y-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+                          <div className="space-y-2 md:space-y-3">
                             <label className="text-sm font-bold text-slate-700 ml-1">Preferred Date</label>
                             <input 
                               type="date" 
                               required
                               value={formData.date}
                               onChange={(e) => setFormData({...formData, date: e.target.value})}
-                              className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
+                              className="w-full px-4 py-3 md:px-6 md:py-4 bg-slate-50 border-none rounded-xl md:rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all"
                             />
                           </div>
-                          <div className="space-y-3">
+                          <div className="space-y-2 md:space-y-3">
                             <label className="text-sm font-bold text-slate-700 ml-1">Number of Travelers</label>
-                            <div className="flex items-center gap-4 bg-slate-50 p-2 rounded-2xl">
+                            <div className="flex items-center gap-4 bg-slate-50 p-1.5 md:p-2 rounded-xl md:rounded-2xl">
                               <button 
                                 type="button"
                                 onClick={() => setFormData({...formData, travelers: Math.max(1, formData.travelers - 1)})}
-                                className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-xl font-bold hover:bg-brand-600 hover:text-white transition-all"
+                                className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg md:rounded-xl shadow-sm flex items-center justify-center text-xl font-bold hover:bg-brand-600 hover:text-white transition-all"
                               >
                                 -
                               </button>
@@ -195,42 +195,42 @@ export default function Booking() {
                               <button 
                                 type="button"
                                 onClick={() => setFormData({...formData, travelers: formData.travelers + 1})}
-                                className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-xl font-bold hover:bg-brand-600 hover:text-white transition-all"
+                                className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg md:rounded-xl shadow-sm flex items-center justify-center text-xl font-bold hover:bg-brand-600 hover:text-white transition-all"
                               >
                                 +
                               </button>
                             </div>
                           </div>
                         </div>
-                        <div className="space-y-3">
+                        <div className="space-y-2 md:space-y-3">
                           <label className="text-sm font-bold text-slate-700 ml-1">Special Requests (Optional)</label>
                           <textarea 
                             rows={4}
                             value={formData.specialRequests}
                             onChange={(e) => setFormData({...formData, specialRequests: e.target.value})}
                             placeholder="Dietary requirements, accessibility needs, etc."
-                            className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all resize-none"
+                            className="w-full px-4 py-3 md:px-6 md:py-4 bg-slate-50 border-none rounded-xl md:rounded-2xl focus:ring-2 focus:ring-brand-500 outline-none transition-all resize-none"
                           ></textarea>
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
 
-                  <div className="pt-8 border-t border-slate-50 flex items-center justify-between">
+                  <div className="pt-6 md:pt-8 border-t border-slate-50 flex flex-col-reverse md:flex-row items-center justify-between gap-4">
                     {step > 1 ? (
                       <button 
                         type="button"
                         onClick={() => setStep(step - 1)}
-                        className="px-8 py-4 text-slate-500 font-bold hover:text-slate-900 transition-colors flex items-center gap-2"
+                        className="w-full md:w-auto px-8 py-4 text-slate-500 font-bold hover:text-slate-900 hover:bg-slate-50 rounded-2xl transition-colors flex items-center justify-center gap-2"
                       >
                         <ArrowLeft className="w-5 h-5" /> Back
                       </button>
                     ) : (
-                      <div />
+                      <div className="hidden md:block" />
                     )}
                     <button 
                       type="submit"
-                      className="px-12 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-brand-600 transition-all shadow-xl shadow-slate-200"
+                      className="w-full md:w-auto px-8 md:px-12 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-brand-600 transition-all shadow-xl shadow-slate-200"
                     >
                       {step === 2 ? 'Confirm Booking' : 'Continue'}
                     </button>
@@ -241,9 +241,9 @@ export default function Booking() {
 
             {/* Booking Summary */}
             <div className="lg:col-span-1">
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-white p-8 rounded-[3rem] shadow-2xl shadow-slate-200 border border-slate-100 overflow-hidden">
-                  <div className="relative h-48 -mx-8 -mt-8 mb-8">
+              <div className="sticky top-32 space-y-6 md:space-y-8">
+                <div className="bg-white p-6 md:p-8 rounded-3xl md:rounded-[3rem] shadow-2xl shadow-slate-200 border border-slate-100 overflow-hidden">
+                  <div className="relative h-40 md:h-48 -mx-6 -mt-6 md:-mx-8 md:-mt-8 mb-6 md:mb-8">
                     <img 
                       src={tour.image} 
                       alt={tour.title}
@@ -251,8 +251,8 @@ export default function Booking() {
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                    <div className="absolute bottom-6 left-8">
-                      <h3 className="text-xl font-bold text-white">{tour.title}</h3>
+                    <div className="absolute bottom-4 left-6 md:bottom-6 md:left-8">
+                      <h3 className="text-lg md:text-xl font-bold text-white pr-4">{tour.title}</h3>
                     </div>
                   </div>
 

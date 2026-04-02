@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     name: 'Priya Patel',
-    role: 'Adventure Seeker',
+    role: 'Thrill Seeker',
     content: 'The Dubai desert safari was the highlight of my year. The team at Budget Holidays knows exactly how to balance adventure with comfort.',
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
     rating: 4

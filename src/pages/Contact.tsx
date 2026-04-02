@@ -185,6 +185,33 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        {/* FAQ Section */}
+        <div className="max-w-4xl mx-auto px-6 py-32">
+          <div className="text-center mb-16">
+            <span className="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4 block">Common Questions</span>
+            <h2 className="text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-6">
+            {[
+              { q: 'How do I book a tour?', a: 'You can book directly through our website by selecting a tour package and clicking "Book Now". Alternatively, you can call our support team for assistance.' },
+              { q: 'What is your cancellation policy?', a: 'Cancellations made 30 days before the trip are eligible for a full refund. For later cancellations, please refer to our Terms of Service.' },
+              { q: 'Do you offer customized travel packages?', a: 'Yes! We specialize in creating tailor-made itineraries based on your preferences, budget, and travel dates.' },
+              { q: 'Is travel insurance included?', a: 'While not included in the base price, we highly recommend travel insurance and can help you select a suitable plan.' }
+            ].map((faq, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-lg font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p className="text-slate-500 leading-relaxed">{faq.a}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </Layout>
   );

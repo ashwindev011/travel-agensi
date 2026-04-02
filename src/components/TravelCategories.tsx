@@ -19,24 +19,6 @@ const categories = [
     path: '/tour-packages',
     image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800',
     color: 'bg-emerald-500'
-  },
-  {
-    title: 'Gallery',
-    path: '/gallery',
-    image: 'https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?auto=format&fit=crop&q=80&w=800',
-    color: 'bg-amber-500'
-  },
-  {
-    title: 'Adventure',
-    path: '/tour-packages',
-    image: 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&q=80&w=800',
-    color: 'bg-rose-500'
-  },
-  {
-    title: 'Honeymoon',
-    path: '/tour-packages',
-    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800',
-    color: 'bg-indigo-500'
   }
 ];
 

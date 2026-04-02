@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Loading from '../components/Loading';
 import SuccessModal from '../components/SuccessModal';
-import { Plane, Calendar, Users, MapPin, Search, ArrowRightLeft } from 'lucide-react';
+import { Plane, Calendar, Users, MapPin, Search, ArrowRightLeft, Award, Clock, ShieldCheck } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Flights() {
@@ -195,6 +195,35 @@ export default function Flights() {
                 <h3 className="text-xl font-bold text-slate-900">{f.title}</h3>
                 <p className="text-slate-500 leading-relaxed">{f.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+        {/* Why Book with Us */}
+        <div className="max-w-7xl mx-auto px-6 py-32">
+          <div className="text-center mb-16">
+            <span className="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4 block">Our Advantage</span>
+            <h2 className="text-4xl font-bold text-slate-900">Why Book Flights with Us?</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: 'Best Price Guarantee', desc: 'We compare thousands of flights to ensure you get the lowest possible fare.', icon: Award },
+              { title: '24/7 Expert Support', desc: 'Our travel experts are always available to help with bookings or changes.', icon: Clock },
+              { title: 'Secure Payments', desc: 'Your transactions are protected by industry-leading security protocols.', icon: ShieldCheck }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group"
+              >
+                <div className="w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all duration-500">
+                  <item.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h3>
+                <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>

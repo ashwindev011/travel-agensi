@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Loading from '../components/Loading';
 import SuccessModal from '../components/SuccessModal';
-import { Hotel, Calendar, Users, MapPin, Search, Star } from 'lucide-react';
+import { Hotel, Calendar, Users, MapPin, Search, Star, Award } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Hotels() {
@@ -53,7 +53,7 @@ export default function Hotels() {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-6xl font-bold text-white mb-6"
             >
-              Luxury Stays
+              Premium Stays
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -193,6 +193,35 @@ export default function Hotels() {
                   <MapPin className="w-4 h-4" /> {h.location}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+        {/* Why Book with Us */}
+        <div className="max-w-7xl mx-auto px-6 py-32">
+          <div className="text-center mb-16">
+            <span className="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4 block">Our Advantage</span>
+            <h2 className="text-4xl font-bold text-slate-900">Why Book Hotels with Us?</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: 'Best Price Guarantee', desc: 'We negotiate directly with hotels to bring you the best rates available.', icon: Award },
+              { title: 'Handpicked Selection', desc: 'Every hotel in our collection is personally vetted for quality and service.', icon: Star },
+              { title: 'Flexible Booking', desc: 'Most of our hotels offer free cancellation and flexible check-in options.', icon: Calendar }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group"
+              >
+                <div className="w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all duration-500">
+                  <item.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h3>
+                <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
