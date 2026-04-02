@@ -1,5 +1,6 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+import { useEffect, useRef } from 'react';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Tours from '../pages/Tours';
@@ -15,6 +16,17 @@ import CookiePolicy from '../pages/CookiePolicy';
 
 export default function AnimatedRoutes() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const isFirstLoad = useRef(true);
+
+  useEffect(() => {
+    if (isFirstLoad.current) {
+      isFirstLoad.current = false;
+      if (location.pathname !== '/') {
+        navigate('/', { replace: true });
+      }
+    }
+  }, [location.pathname, navigate]);
 
   return (
     <AnimatePresence mode="wait">
